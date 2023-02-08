@@ -17,6 +17,8 @@
 		97C8A44E2994489000C6DE96 /* HomeViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97C8A44D2994489000C6DE96 /* HomeViewViewController.swift */; };
 		97C8A4502994489D00C6DE96 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97C8A44F2994489D00C6DE96 /* HomeViewModel.swift */; };
 		97C8A452299448B300C6DE96 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97C8A451299448B300C6DE96 /* HomeView.swift */; };
+		97C8A45429944A3A00C6DE96 /* UIViewController+Preview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97C8A45329944A3A00C6DE96 /* UIViewController+Preview.swift */; };
+		97C8A45629944A5600C6DE96 /* UIView+Preview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97C8A45529944A5600C6DE96 /* UIView+Preview.swift */; };
 		97EE153429941ED90086EFE7 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97EE153329941ED90086EFE7 /* LoginView.swift */; };
 		97EE153629941EF30086EFE7 /* LoginViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97EE153529941EF30086EFE7 /* LoginViewViewController.swift */; };
 		97EE153A2994208B0086EFE7 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97EE15392994208B0086EFE7 /* LoginViewModel.swift */; };
@@ -37,6 +39,8 @@
 		97C8A44D2994489000C6DE96 /* HomeViewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewViewController.swift; sourceTree = "<group>"; };
 		97C8A44F2994489D00C6DE96 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		97C8A451299448B300C6DE96 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		97C8A45329944A3A00C6DE96 /* UIViewController+Preview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Preview.swift"; sourceTree = "<group>"; };
+		97C8A45529944A5600C6DE96 /* UIView+Preview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Preview.swift"; sourceTree = "<group>"; };
 		97EE153329941ED90086EFE7 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		97EE153529941EF30086EFE7 /* LoginViewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewViewController.swift; sourceTree = "<group>"; };
 		97EE15392994208B0086EFE7 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
@@ -170,6 +174,8 @@
 			children = (
 				97EE153C299424DE0086EFE7 /* Extensions.swift */,
 				97EE153F299425160086EFE7 /* ViewCode.swift */,
+				97C8A45529944A5600C6DE96 /* UIView+Preview.swift */,
+				97C8A45329944A3A00C6DE96 /* UIViewController+Preview.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -247,10 +253,12 @@
 				97EE153429941ED90086EFE7 /* LoginView.swift in Sources */,
 				97EE1540299425160086EFE7 /* ViewCode.swift in Sources */,
 				97C8A452299448B300C6DE96 /* HomeView.swift in Sources */,
+				97C8A45429944A3A00C6DE96 /* UIViewController+Preview.swift in Sources */,
 				97A4E21129919D35002CA237 /* AppDelegate.swift in Sources */,
 				97EE153629941EF30086EFE7 /* LoginViewViewController.swift in Sources */,
 				97A4E21B29919D36002CA237 /* SeeMovies.xcdatamodeld in Sources */,
 				97C8A44E2994489000C6DE96 /* HomeViewViewController.swift in Sources */,
+				97C8A45629944A5600C6DE96 /* UIView+Preview.swift in Sources */,
 				97A4E21329919D35002CA237 /* SceneDelegate.swift in Sources */,
 				97C8A4502994489D00C6DE96 /* HomeViewModel.swift in Sources */,
 				97A4E22D2994083B002CA237 /* CacheManager.swift in Sources */,
