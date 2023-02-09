@@ -27,18 +27,11 @@ class SignInView: UIView {
         return view
     }()
     
-    private lazy var logoView: PrimaryLogo = {
-        let view = PrimaryLogo(frame: frame)
-        
-        return view
-    }()
-    
 }
 
 extension SignInView: ViewCode {
     func buildHierarchy() {
         self.addSubview(bgSignIn)
-        self.addSubview(logoView)
     }
     
     func setupConstraints() {
@@ -48,9 +41,7 @@ extension SignInView: ViewCode {
             bgSignIn.leadingAnchor.constraint(equalTo: self.leadingAnchor),
             bgSignIn.trailingAnchor.constraint(equalTo: self.trailingAnchor),
             bgSignIn.bottomAnchor.constraint(equalTo: self.bottomAnchor),
-            
-            logoView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor),
-            logoView.centerXAnchor.constraint(equalTo: centerXAnchor),
+        
         ])
     }
     
