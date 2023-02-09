@@ -26,7 +26,7 @@ class SignInViewController: UIViewController {
     private func setupNavigationBar() {
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(named: "icon-arowLeft"), style: .plain, target: self, action: #selector(dismissSelf))
         self.navigationItem.leftBarButtonItem?.tintColor = .white
-        
+        self.navigationItem.titleView = PrimaryLogo(frame: .zero)
     }
     
     @objc private func dismissSelf() {
