@@ -75,7 +75,7 @@ extension UIView {
 extension UILabel {
     func setTextPlaceholderLabel(textFieldLabel: String) {
         let textAttributes : [NSAttributedString.Key: Any] = [
-            .font: UIFont(name: "UnimedSans-Regular", size: 12)!,
+            .font: UIFont.systemFont(ofSize: 12, weight: .regular),
             .foregroundColor: UIColor.purple700
         ]
         let attributeTextFieldLabel = NSMutableAttributedString(

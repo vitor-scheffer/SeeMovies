@@ -49,7 +49,7 @@ class PrimaryTextField: UITextField {
         let errorLabel = UILabel()
         
         errorLabel.translatesAutoresizingMaskIntoConstraints = false
-        errorLabel.font = UIFont(name: "UnimedSans-Regular", size: 14)
+        errorLabel.font = UIFont.systemFont(ofSize: 14, weight: .regular)
         errorLabel.textColor = .red
         return errorLabel
     }()
@@ -94,7 +94,8 @@ extension PrimaryTextField: ViewCode {
     func applyAdditionalChanges() {
         
         let fieldAttributes : [NSAttributedString.Key: Any] = [
-            .font: UIFont(name: "UnimedSans-Regular", size: 16)!
+            .font: UIFont.systemFont(ofSize: 16, weight: .regular),
+            .foregroundColor: UIColor.gray100
         ]
         let attributePlaceholderField = NSMutableAttributedString(
             string: self.placeholderText,
@@ -104,8 +105,9 @@ extension PrimaryTextField: ViewCode {
         self.translatesAutoresizingMaskIntoConstraints = false
         self.borderWidth = 1
         self.cornerRadius = 8
-        self.borderColor = .purple700
+        self.borderColor = .white
         self.attributedPlaceholder = attributePlaceholderField
-        self.font = UIFont(name: "UnimedSans-Regular", size: 16)
+        self.font = UIFont.systemFont(ofSize: 16, weight: .regular)
+        self.textColor = .white
     }
 }
