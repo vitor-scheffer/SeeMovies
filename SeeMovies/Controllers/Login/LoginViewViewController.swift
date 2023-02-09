@@ -29,10 +29,15 @@ class LoginViewViewController: UIViewController {
 }
 
 extension LoginViewViewController: LoginViewDelegate {
+    func didPressSignUpBtn() {
+        let controller = SignUpViewController()
+        
+        self.navigationController?.pushViewController(controller, animated: true)
+    }
+    
     func didPressAvatar() {
         let controller = SignInViewController()
         
-        controller.modalPresentationStyle = .fullScreen
-        self.present(controller, animated: true)
+        self.navigationController?.pushViewController(controller, animated: true)
     }
 }

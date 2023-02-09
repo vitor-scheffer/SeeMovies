@@ -16,10 +16,20 @@ class SignUpViewController: UIViewController {
         
         self.view = signUpView
     }
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        setupNavigationBar()
     }
-
+    
+    private func setupNavigationBar() {
+        
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(named: "icon-arowLeft"), style: .plain, target: self, action: #selector(dismissSelf))
+        self.navigationItem.leftBarButtonItem?.tintColor = .white
+    }
+    
+    @objc private func dismissSelf() {
+        self.navigationController?.popViewController(animated: true)
+    }
 }

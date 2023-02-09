@@ -54,9 +54,7 @@ extension SignInView: ViewCode {
         ])
     }
     
-    func applyAdditionalChanges() {
-        
-    }
+    func applyAdditionalChanges() {}
 }
 
 #if DEBUG
