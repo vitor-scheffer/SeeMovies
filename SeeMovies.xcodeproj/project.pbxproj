@@ -19,6 +19,7 @@
 		97C8A452299448B300C6DE96 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97C8A451299448B300C6DE96 /* HomeView.swift */; };
 		97C8A45429944A3A00C6DE96 /* UIViewController+Preview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97C8A45329944A3A00C6DE96 /* UIViewController+Preview.swift */; };
 		97C8A45629944A5600C6DE96 /* UIView+Preview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97C8A45529944A5600C6DE96 /* UIView+Preview.swift */; };
+		97C8A4592994989000C6DE96 /* PrimaryTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97C8A4582994989000C6DE96 /* PrimaryTextField.swift */; };
 		97EE153429941ED90086EFE7 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97EE153329941ED90086EFE7 /* LoginView.swift */; };
 		97EE153629941EF30086EFE7 /* LoginViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97EE153529941EF30086EFE7 /* LoginViewViewController.swift */; };
 		97EE153A2994208B0086EFE7 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97EE15392994208B0086EFE7 /* LoginViewModel.swift */; };
@@ -41,6 +42,7 @@
 		97C8A451299448B300C6DE96 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		97C8A45329944A3A00C6DE96 /* UIViewController+Preview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Preview.swift"; sourceTree = "<group>"; };
 		97C8A45529944A5600C6DE96 /* UIView+Preview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Preview.swift"; sourceTree = "<group>"; };
+		97C8A4582994989000C6DE96 /* PrimaryTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimaryTextField.swift; sourceTree = "<group>"; };
 		97EE153329941ED90086EFE7 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		97EE153529941EF30086EFE7 /* LoginViewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewViewController.swift; sourceTree = "<group>"; };
 		97EE15392994208B0086EFE7 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
@@ -134,9 +136,18 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
+		97C8A4572994985500C6DE96 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				97C8A4582994989000C6DE96 /* PrimaryTextField.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
 		97EE153029941EA50086EFE7 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				97C8A4572994985500C6DE96 /* Components */,
 				97C8A44A2994486D00C6DE96 /* Home */,
 				97EE153129941EBA0086EFE7 /* Login */,
 			);
@@ -264,6 +275,7 @@
 				97A4E22D2994083B002CA237 /* CacheManager.swift in Sources */,
 				97A4E22929940811002CA237 /* UIColors+Extensions.swift in Sources */,
 				97EE153D299424DE0086EFE7 /* Extensions.swift in Sources */,
+				97C8A4592994989000C6DE96 /* PrimaryTextField.swift in Sources */,
 				97EE153A2994208B0086EFE7 /* LoginViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

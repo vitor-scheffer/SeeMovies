@@ -3,7 +3,6 @@
     <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
-        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -16,29 +15,26 @@
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="JO7-Oo-ze0">
-                                <rect key="frame" x="70" y="302" width="250" height="240.33333333333337"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="hZz-5W-XGC">
+                                <rect key="frame" x="75" y="302" width="240" height="240.33333333333337"/>
                             </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Bcu-3y-fUS"/>
-                        <color key="backgroundColor" name="Purple300"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="JO7-Oo-ze0" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" constant="70" id="4DZ-gV-7W2"/>
-                            <constraint firstAttribute="trailing" secondItem="JO7-Oo-ze0" secondAttribute="trailing" constant="70" id="Err-ZI-qth"/>
-                            <constraint firstItem="JO7-Oo-ze0" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="Rcw-Cj-JUN"/>
-                            <constraint firstItem="JO7-Oo-ze0" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="zcY-PG-rCf"/>
+                            <constraint firstItem="Bcu-3y-fUS" firstAttribute="trailing" secondItem="hZz-5W-XGC" secondAttribute="trailing" constant="75" id="EuJ-Rd-z60"/>
+                            <constraint firstItem="hZz-5W-XGC" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="ULm-EF-xkS"/>
+                            <constraint firstItem="hZz-5W-XGC" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="b1C-GT-jvl"/>
+                            <constraint firstItem="hZz-5W-XGC" firstAttribute="leading" secondItem="Bcu-3y-fUS" secondAttribute="leading" constant="75" id="um4-lg-llz"/>
                         </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="53" y="375"/>
+            <point key="canvasLocation" x="52.307692307692307" y="374.64454976303318"/>
         </scene>
     </scenes>
     <resources>
         <image name="logo" width="488" height="240.33332824707031"/>
-        <namedColor name="Purple300">
-            <color red="0.47099998593330383" green="0.34099999070167542" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
     </resources>
 </document>
