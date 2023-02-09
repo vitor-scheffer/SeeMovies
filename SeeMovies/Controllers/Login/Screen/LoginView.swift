@@ -9,6 +9,7 @@ import UIKit
 
 protocol LoginViewDelegate: AnyObject {
     func didPressAvatar()
+    func didPressSignUpBtn()
 }
 
 class LoginView: UIView {
@@ -73,11 +74,16 @@ class LoginView: UIView {
         button.backgroundColor = .gray100.withAlphaComponent(0.2)
         button.setTitle("Sign Up", for: .normal)
         button.cornerRadius = 15
+        button.addTarget(self, action: #selector(didPressSignUpBtn), for: .touchUpInside)
         return button
     }()
     
     @objc private func didPressAvatar() {
         self.delegate?.didPressAvatar()
+    }
+    
+    @objc private func didPressSignUpBtn() {
+        self.delegate?.didPressSignUpBtn()
     }
 }
 
