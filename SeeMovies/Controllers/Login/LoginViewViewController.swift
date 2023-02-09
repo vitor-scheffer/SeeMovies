@@ -19,6 +19,20 @@ class LoginViewViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        setupDelegates()
     }
 
+    private func setupDelegates() {
+        loginView.delegate = self
+    }
+}
+
+extension LoginViewViewController: LoginViewDelegate {
+    func didPressAvatar() {
+        let controller = SignInViewController()
+        
+        controller.modalPresentationStyle = .fullScreen
+        self.present(controller, animated: true)
+    }
 }

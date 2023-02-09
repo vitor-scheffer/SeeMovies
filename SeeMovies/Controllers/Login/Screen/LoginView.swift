@@ -7,7 +7,13 @@
 
 import UIKit
 
+protocol LoginViewDelegate: AnyObject {
+    func didPressAvatar()
+}
+
 class LoginView: UIView {
+    
+    weak var delegate: LoginViewDelegate?
     
     override init(frame: CGRect) {
         super.init(frame: .zero)
@@ -28,12 +34,9 @@ class LoginView: UIView {
         return view
     }()
     
-    private lazy var logoView: UIImageView = {
-        let view = UIImageView()
+    private lazy var logoView: PrimaryLogo = {
+        let view = PrimaryLogo(frame: frame)
         
-        view.translatesAutoresizingMaskIntoConstraints = false
-        view.image = UIImage(named: "logo")
-        view.contentMode = .scaleAspectFit
         return view
     }()
     
@@ -49,23 +52,18 @@ class LoginView: UIView {
     
     private lazy var avatarView: UIButton = {
         let button = UIButton()
+        let titleBtn = NSMutableAttributedString(string: "+",
+                                                 attributes: [NSAttributedString.Key.foregroundColor : UIColor.white, NSAttributedString.Key.font : UIFont.systemFont(ofSize: 60, weight: .bold)])
         
         button.translatesAutoresizingMaskIntoConstraints = false
-        button.setImage(UIImage(named: "avatar"), for: .normal)
+        button.setAttributedTitle(titleBtn, for: .normal)
         button.borderWidth = 5
         button.cornerRadius = 80
         button.borderColor = .purple700
+        button.tintColor = .white
+        button.backgroundColor = .gray100.withAlphaComponent(0.1)
+        button.addTarget(self, action: #selector(didPressAvatar), for: .touchUpInside)
         return button
-    }()
-    
-    private lazy var nameLabel: UILabel = {
-        let label = UILabel()
-        
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = UIFont.systemFont(ofSize: 20, weight: .light)
-        label.text = "Vitor Scheffer"
-        label.textColor = .white
-        return label
     }()
     
     private lazy var signUpButton: UIButton = {
@@ -73,10 +71,14 @@ class LoginView: UIView {
         
         button.translatesAutoresizingMaskIntoConstraints = false
         button.backgroundColor = .gray100.withAlphaComponent(0.2)
-        button.setTitle("+ USER", for: .normal)
+        button.setTitle("Sign Up", for: .normal)
         button.cornerRadius = 15
         return button
     }()
+    
+    @objc private func didPressAvatar() {
+        self.delegate?.didPressAvatar()
+    }
 }
 
 extension LoginView: ViewCode {
@@ -85,7 +87,6 @@ extension LoginView: ViewCode {
         self.addSubview(logoView)
         self.addSubview(titlelabel)
         self.addSubview(avatarView)
-        self.addSubview(nameLabel)
         self.addSubview(signUpButton)
     }
     
@@ -99,17 +100,14 @@ extension LoginView: ViewCode {
             
             logoView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor),
             logoView.centerXAnchor.constraint(equalTo: self.centerXAnchor),
-            logoView.widthAnchor.constraint(equalToConstant: 100),
-            logoView.heightAnchor.constraint(equalToConstant: 50),
             
             titlelabel.topAnchor.constraint(equalTo: logoView.bottomAnchor, constant: 32),
             titlelabel.centerXAnchor.constraint(equalTo: centerXAnchor),
             
             avatarView.centerYAnchor.constraint(equalTo: centerYAnchor),
             avatarView.centerXAnchor.constraint(equalTo: centerXAnchor),
-            
-            nameLabel.topAnchor.constraint(equalTo: avatarView.bottomAnchor, constant: 10),
-            nameLabel.centerXAnchor.constraint(equalTo: avatarView.centerXAnchor),
+            avatarView.heightAnchor.constraint(equalToConstant: 160),
+            avatarView.widthAnchor.constraint(equalToConstant: 160),
             
             signUpButton.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: -32),
             signUpButton.centerXAnchor.constraint(equalTo: self.centerXAnchor),

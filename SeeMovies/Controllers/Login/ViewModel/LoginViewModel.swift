@@ -7,6 +7,6 @@
 
 import UIKit
 
-class ViewModel {
+class LoginViewModel {
     
 }
