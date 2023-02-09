@@ -25,6 +25,11 @@
 		97C8A4632994ABF100C6DE96 /* User+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97C8A4622994ABF100C6DE96 /* User+CoreDataProperties.swift */; };
 		97C8A4652994AC1C00C6DE96 /* User+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97C8A4642994AC1C00C6DE96 /* User+CoreDataClass.swift */; };
 		97C8A46B2994AFB200C6DE96 /* Movies.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 97C8A4692994AFB200C6DE96 /* Movies.xcdatamodeld */; };
+		97C8A47129953F9200C6DE96 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97C8A47029953F9200C6DE96 /* SignInViewController.swift */; };
+		97C8A47329953FA100C6DE96 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97C8A47229953FA100C6DE96 /* SignUpViewController.swift */; };
+		97C8A47529953FC200C6DE96 /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97C8A47429953FC200C6DE96 /* SignInView.swift */; };
+		97C8A47729953FD300C6DE96 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97C8A47629953FD300C6DE96 /* SignUpView.swift */; };
+		97C8A4792995418800C6DE96 /* PrimaryLogo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97C8A4782995418800C6DE96 /* PrimaryLogo.swift */; };
 		97EE153429941ED90086EFE7 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97EE153329941ED90086EFE7 /* LoginView.swift */; };
 		97EE153629941EF30086EFE7 /* LoginViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97EE153529941EF30086EFE7 /* LoginViewViewController.swift */; };
 		97EE153A2994208B0086EFE7 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97EE15392994208B0086EFE7 /* LoginViewModel.swift */; };
@@ -53,6 +58,11 @@
 		97C8A4622994ABF100C6DE96 /* User+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		97C8A4642994AC1C00C6DE96 /* User+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+CoreDataClass.swift"; sourceTree = "<group>"; };
 		97C8A46A2994AFB200C6DE96 /* Movies.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Movies.xcdatamodel; sourceTree = "<group>"; };
+		97C8A47029953F9200C6DE96 /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
+		97C8A47229953FA100C6DE96 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		97C8A47429953FC200C6DE96 /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
+		97C8A47629953FD300C6DE96 /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
+		97C8A4782995418800C6DE96 /* PrimaryLogo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimaryLogo.swift; sourceTree = "<group>"; };
 		97EE153329941ED90086EFE7 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		97EE153529941EF30086EFE7 /* LoginViewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewViewController.swift; sourceTree = "<group>"; };
 		97EE15392994208B0086EFE7 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
@@ -155,6 +165,7 @@
 			isa = PBXGroup;
 			children = (
 				97C8A4582994989000C6DE96 /* PrimaryTextField.swift */,
+				97C8A4782995418800C6DE96 /* PrimaryLogo.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -175,6 +186,40 @@
 			path = Server;
 			sourceTree = "<group>";
 		};
+		97C8A46C29953F3300C6DE96 /* SignIn */ = {
+			isa = PBXGroup;
+			children = (
+				97C8A46E29953F7400C6DE96 /* Screen */,
+				97C8A47029953F9200C6DE96 /* SignInViewController.swift */,
+			);
+			path = SignIn;
+			sourceTree = "<group>";
+		};
+		97C8A46D29953F3B00C6DE96 /* SignUp */ = {
+			isa = PBXGroup;
+			children = (
+				97C8A46F29953F7B00C6DE96 /* Screen */,
+				97C8A47229953FA100C6DE96 /* SignUpViewController.swift */,
+			);
+			path = SignUp;
+			sourceTree = "<group>";
+		};
+		97C8A46E29953F7400C6DE96 /* Screen */ = {
+			isa = PBXGroup;
+			children = (
+				97C8A47429953FC200C6DE96 /* SignInView.swift */,
+			);
+			path = Screen;
+			sourceTree = "<group>";
+		};
+		97C8A46F29953F7B00C6DE96 /* Screen */ = {
+			isa = PBXGroup;
+			children = (
+				97C8A47629953FD300C6DE96 /* SignUpView.swift */,
+			);
+			path = Screen;
+			sourceTree = "<group>";
+		};
 		97EE153029941EA50086EFE7 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -191,6 +236,8 @@
 				97EE15382994204C0086EFE7 /* ViewModel */,
 				97EE153229941EC20086EFE7 /* Screen */,
 				97EE153529941EF30086EFE7 /* LoginViewViewController.swift */,
+				97C8A46C29953F3300C6DE96 /* SignIn */,
+				97C8A46D29953F3B00C6DE96 /* SignUp */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -293,9 +340,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				97C8A47329953FA100C6DE96 /* SignUpViewController.swift in Sources */,
 				97EE153429941ED90086EFE7 /* LoginView.swift in Sources */,
 				97EE1540299425160086EFE7 /* ViewCode.swift in Sources */,
 				97C8A452299448B300C6DE96 /* HomeView.swift in Sources */,
+				97C8A47729953FD300C6DE96 /* SignUpView.swift in Sources */,
 				97C8A45429944A3A00C6DE96 /* UIViewController+Preview.swift in Sources */,
 				97C8A45D2994A8CB00C6DE96 /* ServerContentManager.swift in Sources */,
 				97C8A45F2994A9F800C6DE96 /* NSManagedObject+Utils.swift in Sources */,
@@ -304,9 +353,12 @@
 				97EE153629941EF30086EFE7 /* LoginViewViewController.swift in Sources */,
 				97C8A44E2994489000C6DE96 /* HomeViewViewController.swift in Sources */,
 				97C8A4632994ABF100C6DE96 /* User+CoreDataProperties.swift in Sources */,
+				97C8A4792995418800C6DE96 /* PrimaryLogo.swift in Sources */,
 				97C8A45629944A5600C6DE96 /* UIView+Preview.swift in Sources */,
 				97A4E21329919D35002CA237 /* SceneDelegate.swift in Sources */,
 				97C8A4502994489D00C6DE96 /* HomeViewModel.swift in Sources */,
+				97C8A47529953FC200C6DE96 /* SignInView.swift in Sources */,
+				97C8A47129953F9200C6DE96 /* SignInViewController.swift in Sources */,
 				97C8A4652994AC1C00C6DE96 /* User+CoreDataClass.swift in Sources */,
 				97A4E22D2994083B002CA237 /* CacheManager.swift in Sources */,
 				97A4E22929940811002CA237 /* UIColors+Extensions.swift in Sources */,
