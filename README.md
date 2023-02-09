@@ -2,8 +2,9 @@
 App de filmes mobile inspirado no HBO Max.
 
 <a href="#" target="_blank">
-  <img style="height: 500px" src="https://user-images.githubusercontent.com/103120313/217963130-e0ed7c24-3fa1-4ef8-b0b6-49d8ad019809.png"></img>
+  <img style="height: 500px" src="https://user-images.githubusercontent.com/103120313/217963799-cb2e4f42-f26d-4bf8-baef-5fac996a757e.png"></img>
 </a>
+
 
 # 🛠️ Em construção 🛠️
 
