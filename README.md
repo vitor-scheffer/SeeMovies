@@ -10,7 +10,19 @@ App de filmes mobile inspirado no HBO Max.
 
 # 📲 Funcionalidades
 
+<ul>
+  <li>É possível adicionar e remover usuários</li>
+  <li>É possível adicionar e remover filmes favoritos</li>
+</ul>
+
 # 🛠️ Tecnologias
 
+<ul>
+  <li>Alamofire</li>
+  <li>View Code</li>
+  <li>API Rest</li>
+  <li>Core Data</li>
+  <li>UserDefaults</li>
+</ul>
 
 
