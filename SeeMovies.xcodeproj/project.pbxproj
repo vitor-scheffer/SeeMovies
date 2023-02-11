@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		9772DB9729980DE200748967 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 9772DB9629980DE200748967 /* Alamofire */; };
+		9772DB9B2998261E00748967 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9772DB9A2998261E00748967 /* GoogleService-Info.plist */; };
+		9772DB9E299828D100748967 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 9772DB9D299828D100748967 /* FirebaseAnalytics */; };
+		9772DBA0299828D100748967 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 9772DB9F299828D100748967 /* FirebaseAuth */; };
+		9772DBA2299828D100748967 /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = 9772DBA1299828D100748967 /* FirebaseDatabase */; };
 		97A4E21129919D35002CA237 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97A4E21029919D35002CA237 /* AppDelegate.swift */; };
 		97A4E21329919D35002CA237 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97A4E21229919D35002CA237 /* SceneDelegate.swift */; };
 		97A4E21D29919D37002CA237 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 97A4E21C29919D37002CA237 /* Assets.xcassets */; };
@@ -40,6 +44,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9772DB9A2998261E00748967 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		97A4E20D29919D35002CA237 /* SeeMovies.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SeeMovies.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		97A4E21029919D35002CA237 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		97A4E21229919D35002CA237 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -78,6 +83,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9772DB9E299828D100748967 /* FirebaseAnalytics in Frameworks */,
+				9772DBA0299828D100748967 /* FirebaseAuth in Frameworks */,
+				9772DBA2299828D100748967 /* FirebaseDatabase in Frameworks */,
 				9772DB9729980DE200748967 /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -107,6 +115,7 @@
 				97A4E21029919D35002CA237 /* AppDelegate.swift */,
 				97A4E21229919D35002CA237 /* SceneDelegate.swift */,
 				97A4E22129919D37002CA237 /* Info.plist */,
+				9772DB9A2998261E00748967 /* GoogleService-Info.plist */,
 				97A4E227299407E3002CA237 /* Resources */,
 				97C8A45B2994A8B600C6DE96 /* Server */,
 				97A4E22B2994082F002CA237 /* Modal */,
@@ -292,6 +301,9 @@
 			name = SeeMovies;
 			packageProductDependencies = (
 				9772DB9629980DE200748967 /* Alamofire */,
+				9772DB9D299828D100748967 /* FirebaseAnalytics */,
+				9772DB9F299828D100748967 /* FirebaseAuth */,
+				9772DBA1299828D100748967 /* FirebaseDatabase */,
 			);
 			productName = SeeMovies;
 			productReference = 97A4E20D29919D35002CA237 /* SeeMovies.app */;
@@ -324,6 +336,7 @@
 			packageReferences = (
 				9772DB9529980DE200748967 /* XCRemoteSwiftPackageReference "Alamofire" */,
 				9772DB9829980F2500748967 /* XCRemoteSwiftPackageReference "SDWebImage" */,
+				9772DB9C299828D100748967 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 			);
 			productRefGroup = 97A4E20E29919D35002CA237 /* Products */;
 			projectDirPath = "";
@@ -342,6 +355,7 @@
 				97C8A44929942E4600C6DE96 /* LaunchScreen.storyboard in Resources */,
 				97C8A4612994AA3600C6DE96 /* Localizable.strings in Resources */,
 				97A4E21D29919D37002CA237 /* Assets.xcassets in Resources */,
+				9772DB9B2998261E00748967 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -546,6 +560,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
+				"OTHER_LDFLAGS[arch=*]" = "";
 				PRODUCT_BUNDLE_IDENTIFIER = com.dbccompany.SeeMovies;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -594,6 +609,14 @@
 				version = 5.1.0;
 			};
 		};
+		9772DB9C299828D100748967 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -601,6 +624,21 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 9772DB9529980DE200748967 /* XCRemoteSwiftPackageReference "Alamofire" */;
 			productName = Alamofire;
+		};
+		9772DB9D299828D100748967 /* FirebaseAnalytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9772DB9C299828D100748967 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalytics;
+		};
+		9772DB9F299828D100748967 /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9772DB9C299828D100748967 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		9772DBA1299828D100748967 /* FirebaseDatabase */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9772DB9C299828D100748967 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseDatabase;
 		};
 /* End XCSwiftPackageProductDependency section */
 
