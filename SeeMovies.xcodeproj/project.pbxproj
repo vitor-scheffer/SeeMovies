@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9772DB9729980DE200748967 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 9772DB9629980DE200748967 /* Alamofire */; };
 		97A4E21129919D35002CA237 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97A4E21029919D35002CA237 /* AppDelegate.swift */; };
 		97A4E21329919D35002CA237 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97A4E21229919D35002CA237 /* SceneDelegate.swift */; };
 		97A4E21D29919D37002CA237 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 97A4E21C29919D37002CA237 /* Assets.xcassets */; };
@@ -77,6 +78,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9772DB9729980DE200748967 /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -236,8 +238,8 @@
 		97EE153129941EBA0086EFE7 /* Login */ = {
 			isa = PBXGroup;
 			children = (
-				97EE15382994204C0086EFE7 /* ViewModel */,
 				97EE153229941EC20086EFE7 /* Screen */,
+				97EE15382994204C0086EFE7 /* ViewModel */,
 				97EE153529941EF30086EFE7 /* LoginViewViewController.swift */,
 				97C8A46C29953F3300C6DE96 /* SignIn */,
 				97C8A46D29953F3B00C6DE96 /* SignUp */,
@@ -288,6 +290,9 @@
 			dependencies = (
 			);
 			name = SeeMovies;
+			packageProductDependencies = (
+				9772DB9629980DE200748967 /* Alamofire */,
+			);
 			productName = SeeMovies;
 			productReference = 97A4E20D29919D35002CA237 /* SeeMovies.app */;
 			productType = "com.apple.product-type.application";
@@ -316,6 +321,10 @@
 				Base,
 			);
 			mainGroup = 97A4E20429919D35002CA237;
+			packageReferences = (
+				9772DB9529980DE200748967 /* XCRemoteSwiftPackageReference "Alamofire" */,
+				9772DB9829980F2500748967 /* XCRemoteSwiftPackageReference "SDWebImage" */,
+			);
 			productRefGroup = 97A4E20E29919D35002CA237 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -567,6 +576,33 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		9772DB9529980DE200748967 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.6.1;
+			};
+		};
+		9772DB9829980F2500748967 /* XCRemoteSwiftPackageReference "SDWebImage" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SDWebImage/SDWebImage.git";
+			requirement = {
+				kind = exactVersion;
+				version = 5.1.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		9772DB9629980DE200748967 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9772DB9529980DE200748967 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		97C8A4692994AFB200C6DE96 /* Movies.xcdatamodeld */ = {

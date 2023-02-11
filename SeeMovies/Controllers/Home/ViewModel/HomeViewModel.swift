@@ -6,3 +6,20 @@
 //
 
 import Foundation
+import Alamofire
+
+class HomeViewModel {
+    
+    func getMovies() {
+        let parameters: Parameters = ["":""]
+        
+        ServerContentManager.shared.getMovies(parameters: parameters) { (response, success) in
+            
+            if success {
+                print(response as Any)
+            } else {
+                print("Ocorreu um erro.")
+            }
+        }
+    }
+}
