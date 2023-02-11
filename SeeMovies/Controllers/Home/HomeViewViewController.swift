@@ -10,6 +10,7 @@ import UIKit
 class HomeViewViewController: UIViewController {
     
     private lazy var homeView = HomeView()
+    private lazy var viewModel = HomeViewModel()
     
     override func loadView() {
         super.loadView()
@@ -19,6 +20,8 @@ class HomeViewViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        viewModel.getMovies()
     }
 
 }
