@@ -7,7 +7,14 @@
 
 import UIKit
 
+protocol SignInViewDelegate: AnyObject {
+    
+    func didPressPasswordVisibilityBtn()
+}
+
 class SignInView: UIView {
+    
+    weak var delegate: SignInViewDelegate?
     
     override init(frame: CGRect) {
         super.init(frame: .zero)
@@ -39,16 +46,27 @@ class SignInView: UIView {
         return label
     }()
     
-    private lazy var emailField: PrimaryTextField = {
+    lazy var emailField: PrimaryTextField = {
         let field = PrimaryTextField(placeholder: "Email")
         
         return field
     }()
     
-    private lazy var passwordField: PrimaryTextField = {
+    lazy var passwordField: PrimaryTextField = {
         let field = PrimaryTextField(placeholder: "Password")
         
+        field.isSecureTextEntry = true
         return field
+    }()
+    
+    lazy var passwordVisibilityBtn: UIButton = {
+        let btn = UIButton()
+        
+        btn.translatesAutoresizingMaskIntoConstraints = false
+        btn.setImage(UIImage(named: "icon-hidden"), for: .normal)
+        btn.tintColor = .white
+        btn.addTarget(self, action: #selector(didPressPasswordVisibilityBtn), for: .touchUpInside)
+        return btn
     }()
     
     private lazy var stackView: UIStackView = {
@@ -65,12 +83,17 @@ class SignInView: UIView {
         
         return button
     }()
+    
+    @objc private func didPressPasswordVisibilityBtn() {
+        self.delegate?.didPressPasswordVisibilityBtn()
+    }
 }
 
 extension SignInView: ViewCode {
     func buildHierarchy() {
         self.addSubview(bgSignIn)
         self.addSubview(titlelabel)
+        passwordField.addSubview(passwordVisibilityBtn)
         self.addSubview(stackView)
         self.addSubview(signInButton)
     }
@@ -87,11 +110,14 @@ extension SignInView: ViewCode {
             titlelabel.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 12),
             titlelabel.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -12),
             
+            passwordVisibilityBtn.centerYAnchor.constraint(equalTo: passwordField.centerYAnchor),
+            passwordVisibilityBtn.trailingAnchor.constraint(equalTo: passwordField.trailingAnchor, constant: -20),
+            
             stackView.topAnchor.constraint(equalTo: titlelabel.bottomAnchor, constant: 50),
             stackView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 12),
             stackView.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -12),
             
-            signInButton.topAnchor.constraint(equalTo: stackView.bottomAnchor, constant: 32),
+            signInButton.topAnchor.constraint(equalTo: stackView.bottomAnchor, constant: 50),
             signInButton.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 12),
             signInButton.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -12),
             
