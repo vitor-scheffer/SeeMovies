@@ -9,6 +9,7 @@ import UIKit
 
 protocol SignInViewDelegate: AnyObject {
     
+    func didPressSignInBtn()
     func didPressPasswordVisibilityBtn()
 }
 
@@ -81,8 +82,13 @@ class SignInView: UIView {
     private lazy var signInButton: PrimaryButton = {
         let button = PrimaryButton(title: "SIGN IN")
         
+        button.addTarget(self, action: #selector(didPressSignInBtn), for: .touchUpInside)
         return button
     }()
+    
+    @objc private func didPressSignInBtn() {
+        self.delegate?.didPressSignInBtn()
+    }
     
     @objc private func didPressPasswordVisibilityBtn() {
         self.delegate?.didPressPasswordVisibilityBtn()

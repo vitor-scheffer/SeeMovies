@@ -7,15 +7,21 @@
 
 import UIKit
 
-class HomeViewViewController: UIViewController {
+class HomeViewController: UIViewController {
     
-    private lazy var homeView = HomeView()
+    private lazy var screen = HomeView()
     private lazy var viewModel = HomeViewModel()
     
     override func loadView() {
         super.loadView()
         
-        self.view = homeView
+        self.view = screen
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        setupNavigationBar()
     }
 
     override func viewDidLoad() {
@@ -24,4 +30,7 @@ class HomeViewViewController: UIViewController {
         viewModel.getMovies()
     }
 
+    private func setupNavigationBar() {
+        self.navigationItem.titleView = PrimaryLogo(frame: .zero)
+    }
 }

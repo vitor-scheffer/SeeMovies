@@ -9,12 +9,12 @@ import UIKit
 
 class LoginViewViewController: UIViewController {
     
-    private lazy var loginView = LoginView()
+    private lazy var screen = LoginView()
     
     override func loadView() {
         super.loadView()
         
-        self.view = loginView
+        self.view = screen
     }
 
     override func viewDidLoad() {
@@ -24,7 +24,7 @@ class LoginViewViewController: UIViewController {
     }
 
     private func setupDelegates() {
-        loginView.delegate = self
+        screen.delegate = self
     }
 }
 
