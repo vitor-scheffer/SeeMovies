@@ -1,13 +1,13 @@
 //
-//  HomeView.swift
+//  SearchView.swift
 //  SeeMovies
 //
-//  Created by José Vitor Scheffer Boff dos Santos on 08/02/23.
+//  Created by José Vitor Scheffer Boff dos Santos on 11/02/23.
 //
 
 import UIKit
 
-class HomeView: UIView {
+class SearchView: UIView {
     
     override init(frame: CGRect) {
         super.init(frame: .zero)
@@ -18,19 +18,16 @@ class HomeView: UIView {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
 }
 
-extension HomeView: ViewCode {
-    func buildHierarchy() {
-        
-    }
+extension SearchView: ViewCode {
     
-    func setupConstraints() {
-        
-    }
+    func buildHierarchy() {}
+    
+    func setupConstraints() {}
     
     func applyAdditionalChanges() {
         self.backgroundColor = .gray700
     }
+    
 }

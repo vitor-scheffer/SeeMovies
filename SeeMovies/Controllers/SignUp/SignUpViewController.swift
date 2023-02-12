@@ -9,12 +9,12 @@ import UIKit
 
 class SignUpViewController: UIViewController {
     
-    private lazy var signUpView = SignUpView()
+    private lazy var screen = SignUpView()
     
     override func loadView() {
         super.loadView()
         
-        self.view = signUpView
+        self.view = screen
     }
     
     override func viewDidLoad() {
@@ -33,10 +33,10 @@ class SignUpViewController: UIViewController {
     
     private func setupDelegates() {
         
-        signUpView.delegate = self
-        signUpView.nameField.delegate = self
-        signUpView.emailField.delegate = self
-        signUpView.passwordField.delegate = self
+        screen.delegate = self
+        screen.nameField.delegate = self
+        screen.emailField.delegate = self
+        screen.passwordField.delegate = self
     }
     
     @objc private func dismissSelf() {
@@ -54,27 +54,27 @@ extension SignUpViewController: UITextFieldDelegate {
         
         textField.placeholder = ""
                 
-        if textField == signUpView.nameField {
-            signUpView.nameField.placeholderLabel.isHidden = false
+        if textField == screen.nameField {
+            screen.nameField.placeholderLabel.isHidden = false
             
             UIView.animate(withDuration: 0.2) {
-                self.signUpView.nameField.constraintTopPlaceholderLabel.constant = 8
+                self.screen.nameField.constraintTopPlaceholderLabel.constant = 8
             }
         }
         
-        if textField == signUpView.emailField {
-            signUpView.emailField.placeholderLabel.isHidden = false
+        if textField == screen.emailField {
+            screen.emailField.placeholderLabel.isHidden = false
             
             UIView.animate(withDuration: 0.2) {
-                self.signUpView.emailField.constraintTopPlaceholderLabel.constant = 8
+                self.screen.emailField.constraintTopPlaceholderLabel.constant = 8
             }
         }
         
-        if textField == signUpView.passwordField {
-            signUpView.passwordField.placeholderLabel.isHidden = false
+        if textField == screen.passwordField {
+            screen.passwordField.placeholderLabel.isHidden = false
             
             UIView.animate(withDuration: 0.2) {
-                self.signUpView.passwordField.constraintTopPlaceholderLabel.constant = 8
+                self.screen.passwordField.constraintTopPlaceholderLabel.constant = 8
             }
         }
     }
@@ -83,19 +83,19 @@ extension SignUpViewController: UITextFieldDelegate {
         
         if textField.text?.isEmpty == true {
             
-            if textField == signUpView.nameField {
-                signUpView.nameField.placeholderLabel.isHidden = true
-                signUpView.nameField.placeholder = "Name"
+            if textField == screen.nameField {
+                screen.nameField.placeholderLabel.isHidden = true
+                screen.nameField.placeholder = "Name"
             }
             
-            if textField == signUpView.emailField {
-                signUpView.emailField.placeholderLabel.isHidden = true
-                signUpView.emailField.placeholder = "Email"
+            if textField == screen.emailField {
+                screen.emailField.placeholderLabel.isHidden = true
+                screen.emailField.placeholder = "Email"
             }
             
-            if textField == signUpView.passwordField {
-                signUpView.passwordField.placeholderLabel.isHidden = true
-                signUpView.passwordField.placeholder = "Password"
+            if textField == screen.passwordField {
+                screen.passwordField.placeholderLabel.isHidden = true
+                screen.passwordField.placeholder = "Password"
             }
         }
     }
@@ -104,12 +104,12 @@ extension SignUpViewController: UITextFieldDelegate {
 extension SignUpViewController: SignUpViewDelegate {
     
     func didPressPasswordVisibilityBtn() {
-        if signUpView.passwordField.isSecureTextEntry {
-            signUpView.passwordVisibilityBtn.setImage(UIImage(named: "icon-eye"), for: .normal)
-            signUpView.passwordField.isSecureTextEntry = false
+        if screen.passwordField.isSecureTextEntry {
+            screen.passwordVisibilityBtn.setImage(UIImage(named: "icon-eye"), for: .normal)
+            screen.passwordField.isSecureTextEntry = false
         } else {
-            signUpView.passwordVisibilityBtn.setImage(UIImage(named: "icon-hidden"), for: .normal)
-            signUpView.passwordField.isSecureTextEntry = true
+            screen.passwordVisibilityBtn.setImage(UIImage(named: "icon-hidden"), for: .normal)
+            screen.passwordField.isSecureTextEntry = true
         }
     }
 }

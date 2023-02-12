@@ -16,7 +16,7 @@ class HomeViewModel {
         ServerContentManager.shared.getMovies(parameters: parameters) { (response, success) in
             
             if success {
-                print(response as Any)
+                print(response?.results)
             } else {
                 print("Ocorreu um erro.")
             }

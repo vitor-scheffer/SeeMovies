@@ -26,14 +26,14 @@ class ServerContentManager {
     }
     
         
-    public func getMovies(parameters: Parameters, completion: @escaping(Any?, Bool) -> Void) {
+    public func getMovies(parameters: Parameters, completion: @escaping(TopRated?, Bool) -> Void) {
         guard let url = url(path: Endpoint.getMovies) else { return }
         
         AF.request(url, method: .get, parameters: parameters, encoding: URLEncoding.default).responseJSON { (response) in
             guard let data = response.data else { return }
             
             do {
-                let response = try JSONSerialization.jsonObject(with: data, options: .allowFragments)
+                let response = try JSONDecoder().decode(TopRated.self, from: data)
                 completion(response, true)
             } catch {
                 completion(nil, false)

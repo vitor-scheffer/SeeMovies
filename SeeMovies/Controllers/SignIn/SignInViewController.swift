@@ -9,12 +9,12 @@ import UIKit
 
 class SignInViewController: UIViewController {
     
-    private lazy var signInView = SignInView()
+    private lazy var screen = SignInView()
     
     override func loadView() {
         super.loadView()
         
-        self.view = signInView
+        self.view = screen
     }
 
     override func viewDidLoad() {
@@ -32,9 +32,9 @@ class SignInViewController: UIViewController {
     
     private func setupDelegates() {
         
-        signInView.delegate = self
-        signInView.emailField.delegate = self
-        signInView.passwordField.delegate = self
+        screen.delegate = self
+        screen.emailField.delegate = self
+        screen.passwordField.delegate = self
     }
     
     @objc private func dismissSelf() {
@@ -52,19 +52,19 @@ extension SignInViewController: UITextFieldDelegate {
         
         textField.placeholder = ""
         
-        if textField == signInView.emailField {
-            signInView.emailField.placeholderLabel.isHidden = false
+        if textField == screen.emailField {
+            screen.emailField.placeholderLabel.isHidden = false
             
             UIView.animate(withDuration: 0.2) {
-                self.signInView.emailField.constraintTopPlaceholderLabel.constant = 8
+                self.screen.emailField.constraintTopPlaceholderLabel.constant = 8
             }
         }
         
-        if textField == signInView.passwordField {
-            signInView.passwordField.placeholderLabel.isHidden = false
+        if textField == screen.passwordField {
+            screen.passwordField.placeholderLabel.isHidden = false
             
             UIView.animate(withDuration: 0.2) {
-                self.signInView.passwordField.constraintTopPlaceholderLabel.constant = 8
+                self.screen.passwordField.constraintTopPlaceholderLabel.constant = 8
             }
         }
     }
@@ -73,28 +73,35 @@ extension SignInViewController: UITextFieldDelegate {
         
         if textField.text?.isEmpty == true {
             
-            if textField == signInView.emailField {
-                signInView.emailField.placeholderLabel.isHidden = true
-                signInView.emailField.placeholder = "Email"
+            if textField == screen.emailField {
+                screen.emailField.placeholderLabel.isHidden = true
+                screen.emailField.placeholder = "Email"
             }
             
-            if textField == signInView.passwordField {
-                signInView.passwordField.placeholderLabel.isHidden = true
-                signInView.passwordField.placeholder = "Password"
+            if textField == screen.passwordField {
+                screen.passwordField.placeholderLabel.isHidden = true
+                screen.passwordField.placeholder = "Password"
             }
         }
     }
 }
 
 extension SignInViewController: SignInViewDelegate {
+    func didPressSignInBtn() {
+        let controller = MainTabBarViewController()
+        
+        controller.modalPresentationStyle = .fullScreen
+        self.present(controller, animated: true)
+    }
+    
     
     func didPressPasswordVisibilityBtn() {
-        if signInView.passwordField.isSecureTextEntry {
-            signInView.passwordVisibilityBtn.setImage(UIImage(named: "icon-eye"), for: .normal)
-            signInView.passwordField.isSecureTextEntry = false
+        if screen.passwordField.isSecureTextEntry {
+            screen.passwordVisibilityBtn.setImage(UIImage(named: "icon-eye"), for: .normal)
+            screen.passwordField.isSecureTextEntry = false
         } else {
-            signInView.passwordVisibilityBtn.setImage(UIImage(named: "icon-hidden"), for: .normal)
-            signInView.passwordField.isSecureTextEntry = true
+            screen.passwordVisibilityBtn.setImage(UIImage(named: "icon-hidden"), for: .normal)
+            screen.passwordField.isSecureTextEntry = true
         }
     }
 }
