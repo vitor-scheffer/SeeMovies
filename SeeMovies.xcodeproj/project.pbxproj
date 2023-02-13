@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		9763F3E5299883890038FEB3 /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9763F3E4299883890038FEB3 /* Movie.swift */; };
+		9763F3E82999BD1C0038FEB3 /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = 9763F3E72999BD1C0038FEB3 /* SDWebImage */; };
 		9772DB9729980DE200748967 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 9772DB9629980DE200748967 /* Alamofire */; };
 		9772DB9B2998261E00748967 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9772DB9A2998261E00748967 /* GoogleService-Info.plist */; };
 		9772DB9E299828D100748967 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 9772DB9D299828D100748967 /* FirebaseAnalytics */; };
@@ -99,6 +100,7 @@
 				9772DBA0299828D100748967 /* FirebaseAuth in Frameworks */,
 				9772DBA2299828D100748967 /* FirebaseDatabase in Frameworks */,
 				9772DB9729980DE200748967 /* Alamofire in Frameworks */,
+				9763F3E82999BD1C0038FEB3 /* SDWebImage in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -370,6 +372,7 @@
 				9772DB9D299828D100748967 /* FirebaseAnalytics */,
 				9772DB9F299828D100748967 /* FirebaseAuth */,
 				9772DBA1299828D100748967 /* FirebaseDatabase */,
+				9763F3E72999BD1C0038FEB3 /* SDWebImage */,
 			);
 			productName = SeeMovies;
 			productReference = 97A4E20D29919D35002CA237 /* SeeMovies.app */;
@@ -401,8 +404,8 @@
 			mainGroup = 97A4E20429919D35002CA237;
 			packageReferences = (
 				9772DB9529980DE200748967 /* XCRemoteSwiftPackageReference "Alamofire" */,
-				9772DB9829980F2500748967 /* XCRemoteSwiftPackageReference "SDWebImage" */,
 				9772DB9C299828D100748967 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				9763F3E62999BD1C0038FEB3 /* XCRemoteSwiftPackageReference "SDWebImage" */,
 			);
 			productRefGroup = 97A4E20E29919D35002CA237 /* Products */;
 			projectDirPath = "";
@@ -665,20 +668,20 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		9763F3E62999BD1C0038FEB3 /* XCRemoteSwiftPackageReference "SDWebImage" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SDWebImage/SDWebImage.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
 		9772DB9529980DE200748967 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
 			requirement = {
 				kind = upToNextMajorVersion;
 				minimumVersion = 5.6.1;
-			};
-		};
-		9772DB9829980F2500748967 /* XCRemoteSwiftPackageReference "SDWebImage" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/SDWebImage/SDWebImage.git";
-			requirement = {
-				kind = exactVersion;
-				version = 5.1.0;
 			};
 		};
 		9772DB9C299828D100748967 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
@@ -692,6 +695,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		9763F3E72999BD1C0038FEB3 /* SDWebImage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9763F3E62999BD1C0038FEB3 /* XCRemoteSwiftPackageReference "SDWebImage" */;
+			productName = SDWebImage;
+		};
 		9772DB9629980DE200748967 /* Alamofire */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 9772DB9529980DE200748967 /* XCRemoteSwiftPackageReference "Alamofire" */;
