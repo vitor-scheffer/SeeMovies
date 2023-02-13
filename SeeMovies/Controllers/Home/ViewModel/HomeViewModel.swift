@@ -7,16 +7,21 @@
 
 import Foundation
 import Alamofire
+import SDWebImage
 
 class HomeViewModel {
     
-    func getMovies() {
-        let parameters: Parameters = ["":""]
+    private var movies: [Movie] = []
+    
+    public func getMovies() {
         
-        ServerContentManager.shared.getMovies(parameters: parameters) { (response, success) in
-            
+        ServerContentManager.shared.getMovies() { (response, success) in
             if success {
-                print(response?.results)
+                guard let movies = response?.results else { return }
+
+                DispatchQueue.main.async {
+                    self.movies = movies
+                }
             } else {
                 print("Ocorreu um erro.")
             }

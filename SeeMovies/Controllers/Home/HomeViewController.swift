@@ -32,5 +32,13 @@ class HomeViewController: UIViewController {
 
     private func setupNavigationBar() {
         self.navigationItem.titleView = PrimaryLogo(frame: .zero)
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "SIGN OUT", style: .plain, target: self, action: #selector(didPressSignOutBtn))
+    }
+    
+    @objc private func didPressSignOutBtn() {
+        let controller = UINavigationController(rootViewController: LoginViewViewController())
+        
+        controller.modalPresentationStyle = .fullScreen
+        self.present(controller, animated: true)
     }
 }
