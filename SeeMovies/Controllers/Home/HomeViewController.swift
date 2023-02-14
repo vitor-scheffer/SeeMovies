@@ -27,6 +27,8 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        viewModel.delegate = self
+                
         viewModel.getMovies()
     }
 
@@ -40,5 +42,42 @@ class HomeViewController: UIViewController {
         
         controller.modalPresentationStyle = .fullScreen
         self.present(controller, animated: true)
+    }
+}
+
+extension HomeViewController: HomeViewModelDelegate {
+    
+    func setCollecttionViewDataSource() {
+        self.screen.movieCollectionView.delegate = self
+        self.screen.movieCollectionView.dataSource = self
+        
+        self.screen.movieCollectionView.reloadData()
+    }
+    
+    func setLoading() {
+        self.view.addLoading()
+    }
+    
+    func removeLoading() {
+        self.view?.removeLoading()
+    }
+}
+
+
+
+extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelegate {
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return viewModel.numberOfMovieRows
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        guard let cell = screen.movieCollectionView.dequeueReusableCell(withReuseIdentifier: MovieCollectionViewCell.identifier, for: indexPath) as? MovieCollectionViewCell else {return UICollectionViewCell()}
+        
+        let movie = viewModel.getCurrentMovie(index: indexPath)
+            
+        cell.setupCell(title: movie.title)
+        
+        return cell
     }
 }
