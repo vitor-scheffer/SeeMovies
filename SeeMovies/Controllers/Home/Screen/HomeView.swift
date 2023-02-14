@@ -38,6 +38,20 @@ class HomeView: UIView {
         return label
     }()
     
+    lazy var movieCollectionView: UICollectionView = {
+        let collectionViewLayout = UICollectionViewFlowLayout()
+        collectionViewLayout.itemSize = CGSize(width: 62, height: 122)
+        collectionViewLayout.scrollDirection = .horizontal
+        collectionViewLayout.minimumLineSpacing = 0
+        collectionViewLayout.sectionInset = UIEdgeInsets.zero
+        
+        let view = UICollectionView(frame: frame, collectionViewLayout: collectionViewLayout)
+        
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.register(MovieCollectionViewCell.self, forCellWithReuseIdentifier: MovieCollectionViewCell.identifier)
+        view.contentInset = UIEdgeInsets(top: 0, left: 18, bottom: 0, right: 18)
+        return view
+    }()
 }
 
 extension HomeView: ViewCode {
@@ -45,6 +59,7 @@ extension HomeView: ViewCode {
         
         self.addSubview(mainImageView)
         self.addSubview(watchingLabel)
+        self.addSubview(movieCollectionView)
     }
     
     func setupConstraints() {
@@ -53,10 +68,15 @@ extension HomeView: ViewCode {
             mainImageView.topAnchor.constraint(equalTo: self.topAnchor),
             mainImageView.leadingAnchor.constraint(equalTo: self.leadingAnchor),
             mainImageView.trailingAnchor.constraint(equalTo: self.trailingAnchor),
-            mainImageView.heightAnchor.constraint(equalToConstant: 490),
+        
             
-            watchingLabel.topAnchor.constraint(equalTo: mainImageView.bottomAnchor, constant: 80),
-            watchingLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 16),
+            watchingLabel.topAnchor.constraint(equalTo: mainImageView.bottomAnchor, constant: 30),
+            watchingLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 12),
+            
+            movieCollectionView.topAnchor.constraint(equalTo: watchingLabel.bottomAnchor, constant: 5),
+            movieCollectionView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 12),
+            movieCollectionView.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -12),
+            movieCollectionView.heightAnchor.constraint(equalToConstant: 150)
         ])
     }
     
