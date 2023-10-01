@@ -7,9 +7,9 @@
 
 import UIKit
 
-class LoginViewViewController: UIViewController {
+class OnboardingViewController: UIViewController {
     
-    private lazy var screen = LoginView()
+    private lazy var screen = OnboardingView()
     
     override func loadView() {
         super.loadView()
@@ -28,7 +28,7 @@ class LoginViewViewController: UIViewController {
     }
 }
 
-extension LoginViewViewController: LoginViewDelegate {
+extension OnboardingViewController: OnboardingViewDelegate {
     func didPressSignUpBtn() {
         let controller = SignUpViewController()
         

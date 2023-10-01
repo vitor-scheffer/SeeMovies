@@ -1,9 +1,8 @@
-/* 
-  Localizable.strings
-  SeeMovies
+"SMonboarding.title" = "Who Is Watching?";
 
-  Created by José Vitor Scheffer Boff dos Santos on 09/02/23.
-  
-*/
+"SMsign.in.title" = "Access your HBO Max account";
 
+"SMsign.up.title" = "Create your HBO Max account";
 
+"SMhome.continue.watching" = "Continue Watching";
+"SMhome.trending" = "Trending Now";
