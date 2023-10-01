@@ -7,14 +7,14 @@
 
 import UIKit
 
-protocol LoginViewDelegate: AnyObject {
+protocol OnboardingViewDelegate: AnyObject {
     func didPressAvatar()
     func didPressSignUpBtn()
 }
 
-class LoginView: UIView {
+class OnboardingView: UIView {
     
-    weak var delegate: LoginViewDelegate?
+    weak var delegate: OnboardingViewDelegate?
     
     override init(frame: CGRect) {
         super.init(frame: .zero)
@@ -26,7 +26,7 @@ class LoginView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    private lazy var bgLoginView: UIImageView = {
+    private lazy var bgOnboardingView: UIImageView = {
         let view = UIImageView()
         
         view.translatesAutoresizingMaskIntoConstraints = false
@@ -46,7 +46,7 @@ class LoginView: UIView {
         
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = UIFont.systemFont(ofSize: 32, weight: .light)
-        label.text = "Who Is Watching?"
+        label.text = I18n.Onboarding.title.text
         label.textColor = .white
         return label
     }()
@@ -87,9 +87,9 @@ class LoginView: UIView {
     }
 }
 
-extension LoginView: ViewCode {
+extension OnboardingView: ViewCode {
     func buildHierarchy() {
-        self.addSubview(bgLoginView)
+        self.addSubview(bgOnboardingView)
         self.addSubview(logoView)
         self.addSubview(titlelabel)
         self.addSubview(avatarView)
@@ -99,10 +99,10 @@ extension LoginView: ViewCode {
     func setupConstraints() {
         NSLayoutConstraint.activate([
             
-            bgLoginView.topAnchor.constraint(equalTo: self.topAnchor),
-            bgLoginView.leadingAnchor.constraint(equalTo: self.leadingAnchor),
-            bgLoginView.trailingAnchor.constraint(equalTo: self.trailingAnchor),
-            bgLoginView.bottomAnchor.constraint(equalTo: self.bottomAnchor),
+            bgOnboardingView.topAnchor.constraint(equalTo: self.topAnchor),
+            bgOnboardingView.leadingAnchor.constraint(equalTo: self.leadingAnchor),
+            bgOnboardingView.trailingAnchor.constraint(equalTo: self.trailingAnchor),
+            bgOnboardingView.bottomAnchor.constraint(equalTo: self.bottomAnchor),
             
             logoView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor),
             logoView.centerXAnchor.constraint(equalTo: self.centerXAnchor),
@@ -130,9 +130,9 @@ extension LoginView: ViewCode {
 #if DEBUG
 import SwiftUI
 
-struct LoginView_Preview: PreviewProvider {
+struct OnboardingView_Preview: PreviewProvider {
     static var previews: some View {
-        return LoginView().showPreview()
+        return OnboardingView().showPreview()
     }
 }
 #endif

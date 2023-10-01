@@ -40,7 +40,7 @@ class SignInView: UIView {
         
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = UIFont.systemFont(ofSize: 32, weight: .light)
-        label.text = "Access your HBO Max account"
+        label.text = I18n.SignIn.title.text
         label.textColor = .white
         label.numberOfLines = 0
         label.textAlignment = .center

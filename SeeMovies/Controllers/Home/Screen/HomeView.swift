@@ -33,7 +33,7 @@ class HomeView: UIView {
         
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = UIFont.systemFont(ofSize: 16, weight: .bold)
-        label.text = "Continue Watching  >"
+        label.text = I18n.Home.continueWatching.text
         label.tintColor = .white
         return label
     }()

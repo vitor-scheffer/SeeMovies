@@ -38,7 +38,7 @@ class HomeViewController: UIViewController {
     }
     
     @objc private func didPressSignOutBtn() {
-        let controller = UINavigationController(rootViewController: LoginViewViewController())
+        let controller = UINavigationController(rootViewController: OnboardingViewController())
         
         controller.modalPresentationStyle = .fullScreen
         self.present(controller, animated: true)

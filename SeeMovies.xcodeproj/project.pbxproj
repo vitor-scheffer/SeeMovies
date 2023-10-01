@@ -44,11 +44,12 @@
 		97C8A47729953FD300C6DE96 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97C8A47629953FD300C6DE96 /* SignUpView.swift */; };
 		97C8A4792995418800C6DE96 /* PrimaryLogo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97C8A4782995418800C6DE96 /* PrimaryLogo.swift */; };
 		97C8A47B2995B68E00C6DE96 /* PrimaryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97C8A47A2995B68E00C6DE96 /* PrimaryButton.swift */; };
-		97EE153429941ED90086EFE7 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97EE153329941ED90086EFE7 /* LoginView.swift */; };
-		97EE153629941EF30086EFE7 /* LoginViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97EE153529941EF30086EFE7 /* LoginViewViewController.swift */; };
+		97EE153429941ED90086EFE7 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97EE153329941ED90086EFE7 /* OnboardingView.swift */; };
+		97EE153629941EF30086EFE7 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97EE153529941EF30086EFE7 /* OnboardingViewController.swift */; };
 		97EE153A2994208B0086EFE7 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97EE15392994208B0086EFE7 /* LoginViewModel.swift */; };
 		97EE153D299424DE0086EFE7 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97EE153C299424DE0086EFE7 /* Extensions.swift */; };
 		97EE1540299425160086EFE7 /* ViewCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97EE153F299425160086EFE7 /* ViewCode.swift */; };
+		E5E530872ACA380800051336 /* I18n.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5E530862ACA380800051336 /* I18n.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -86,11 +87,12 @@
 		97C8A47629953FD300C6DE96 /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
 		97C8A4782995418800C6DE96 /* PrimaryLogo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimaryLogo.swift; sourceTree = "<group>"; };
 		97C8A47A2995B68E00C6DE96 /* PrimaryButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimaryButton.swift; sourceTree = "<group>"; };
-		97EE153329941ED90086EFE7 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
-		97EE153529941EF30086EFE7 /* LoginViewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewViewController.swift; sourceTree = "<group>"; };
+		97EE153329941ED90086EFE7 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
+		97EE153529941EF30086EFE7 /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
 		97EE15392994208B0086EFE7 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		97EE153C299424DE0086EFE7 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		97EE153F299425160086EFE7 /* ViewCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewCode.swift; sourceTree = "<group>"; };
+		E5E530862ACA380800051336 /* I18n.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = I18n.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -306,7 +308,7 @@
 			isa = PBXGroup;
 			children = (
 				97C8A4572994985500C6DE96 /* Components */,
-				97EE153129941EBA0086EFE7 /* Login */,
+				97EE153129941EBA0086EFE7 /* Onboarding */,
 				97C8A46C29953F3300C6DE96 /* SignIn */,
 				97C8A46D29953F3B00C6DE96 /* SignUp */,
 				9772DBA32998515A00748967 /* Main */,
@@ -317,20 +319,20 @@
 			path = Controllers;
 			sourceTree = "<group>";
 		};
-		97EE153129941EBA0086EFE7 /* Login */ = {
+		97EE153129941EBA0086EFE7 /* Onboarding */ = {
 			isa = PBXGroup;
 			children = (
 				97EE153229941EC20086EFE7 /* Screen */,
 				97EE15382994204C0086EFE7 /* ViewModel */,
-				97EE153529941EF30086EFE7 /* LoginViewViewController.swift */,
+				97EE153529941EF30086EFE7 /* OnboardingViewController.swift */,
 			);
-			path = Login;
+			path = Onboarding;
 			sourceTree = "<group>";
 		};
 		97EE153229941EC20086EFE7 /* Screen */ = {
 			isa = PBXGroup;
 			children = (
-				97EE153329941ED90086EFE7 /* LoginView.swift */,
+				97EE153329941ED90086EFE7 /* OnboardingView.swift */,
 			);
 			path = Screen;
 			sourceTree = "<group>";
@@ -350,6 +352,7 @@
 				97EE153F299425160086EFE7 /* ViewCode.swift */,
 				97C8A45529944A5600C6DE96 /* UIView+Preview.swift */,
 				97C8A45329944A3A00C6DE96 /* UIViewController+Preview.swift */,
+				E5E530862ACA380800051336 /* I18n.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -439,7 +442,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				97C8A47329953FA100C6DE96 /* SignUpViewController.swift in Sources */,
-				97EE153429941ED90086EFE7 /* LoginView.swift in Sources */,
+				97EE153429941ED90086EFE7 /* OnboardingView.swift in Sources */,
 				97EE1540299425160086EFE7 /* ViewCode.swift in Sources */,
 				9772DBA7299851F200748967 /* MainTabBarViewController.swift in Sources */,
 				97C8A452299448B300C6DE96 /* HomeView.swift in Sources */,
@@ -449,8 +452,9 @@
 				97C8A45F2994A9F800C6DE96 /* NSManagedObject+Utils.swift in Sources */,
 				97C8A46B2994AFB200C6DE96 /* Movies.xcdatamodeld in Sources */,
 				97A4E21129919D35002CA237 /* AppDelegate.swift in Sources */,
-				97EE153629941EF30086EFE7 /* LoginViewViewController.swift in Sources */,
+				97EE153629941EF30086EFE7 /* OnboardingViewController.swift in Sources */,
 				97C8A44E2994489000C6DE96 /* HomeViewController.swift in Sources */,
+				E5E530872ACA380800051336 /* I18n.swift in Sources */,
 				97C8A4632994ABF100C6DE96 /* User+CoreDataProperties.swift in Sources */,
 				97C8A4792995418800C6DE96 /* PrimaryLogo.swift in Sources */,
 				9772DBB42998538200748967 /* SearchView.swift in Sources */,
