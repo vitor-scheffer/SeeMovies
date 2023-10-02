@@ -50,6 +50,7 @@
 		97EE153D299424DE0086EFE7 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97EE153C299424DE0086EFE7 /* Extensions.swift */; };
 		97EE1540299425160086EFE7 /* ViewCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97EE153F299425160086EFE7 /* ViewCode.swift */; };
 		E5E530872ACA380800051336 /* I18n.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5E530862ACA380800051336 /* I18n.swift */; };
+		E5E530892ACA61BD00051336 /* CHANGELOG.md in Sources */ = {isa = PBXBuildFile; fileRef = E5E530882ACA61BD00051336 /* CHANGELOG.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -93,6 +94,7 @@
 		97EE153C299424DE0086EFE7 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		97EE153F299425160086EFE7 /* ViewCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewCode.swift; sourceTree = "<group>"; };
 		E5E530862ACA380800051336 /* I18n.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = I18n.swift; sourceTree = "<group>"; };
+		E5E530882ACA61BD00051336 /* CHANGELOG.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = CHANGELOG.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -164,6 +166,7 @@
 		97A4E20429919D35002CA237 = {
 			isa = PBXGroup;
 			children = (
+				E5E530882ACA61BD00051336 /* CHANGELOG.md */,
 				97A4E20F29919D35002CA237 /* SeeMovies */,
 				97A4E20E29919D35002CA237 /* Products */,
 			);
@@ -471,6 +474,7 @@
 				9772DBB02998535A00748967 /* FavoritesViewController.swift in Sources */,
 				9763F3E5299883890038FEB3 /* Movie.swift in Sources */,
 				97A4E22D2994083B002CA237 /* CacheManager.swift in Sources */,
+				E5E530892ACA61BD00051336 /* CHANGELOG.md in Sources */,
 				97A4E22929940811002CA237 /* UIColors+Extensions.swift in Sources */,
 				97EE153D299424DE0086EFE7 /* Extensions.swift in Sources */,
 				97C8A4592994989000C6DE96 /* PrimaryTextField.swift in Sources */,
