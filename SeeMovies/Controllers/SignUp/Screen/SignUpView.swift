@@ -16,7 +16,7 @@ class SignUpView: UIView {
     
     weak var delegate: SignUpViewDelegate?
     
-    override init(frame: CGRect) {
+    public init() {
         super.init(frame: .zero)
         
         setupView()
@@ -26,10 +26,9 @@ class SignUpView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    private lazy var bgSignIn: UIImageView = {
+    private lazy var bgSignUp: UIImageView = {
         let view = UIImageView()
         
-        view.translatesAutoresizingMaskIntoConstraints = false
         view.image = UIImage(named: "bgLaunch")
         return view
     }()
@@ -37,7 +36,6 @@ class SignUpView: UIView {
     private lazy var titlelabel: UILabel = {
         let label = UILabel()
         
-        label.translatesAutoresizingMaskIntoConstraints = false
         label.font = UIFont.systemFont(ofSize: 32, weight: .light)
         label.text = I18n.SignUp.title.text
         label.textColor = .white
@@ -46,20 +44,20 @@ class SignUpView: UIView {
         return label
     }()
     
-    lazy var nameField: PrimaryTextField = {
-        let field = PrimaryTextField(placeholder: "Name")
+    lazy var nameField: SMTextField = {
+        let field = SMTextField(placeholder: "Name")
         
         return field
     }()
     
-    lazy var emailField: PrimaryTextField = {
-        let field = PrimaryTextField(placeholder: "Email")
+    lazy var emailField: SMTextField = {
+        let field = SMTextField(placeholder: "Email")
         
         return field
     }()
     
-    lazy var passwordField: PrimaryTextField = {
-        let field = PrimaryTextField(placeholder: "Password")
+    lazy var passwordField: SMTextField = {
+        let field = SMTextField(placeholder: "Password")
         
         field.isSecureTextEntry = true
         return field
@@ -68,7 +66,6 @@ class SignUpView: UIView {
     lazy var passwordVisibilityBtn: UIButton = {
         let btn = UIButton()
         
-        btn.translatesAutoresizingMaskIntoConstraints = false
         btn.setImage(UIImage(named: "icon-hidden"), for: .normal)
         btn.tintColor = .white
         btn.addTarget(self, action: #selector(didPressPasswordVisibilityBtn), for: .touchUpInside)
@@ -78,14 +75,13 @@ class SignUpView: UIView {
     private lazy var stackView: UIStackView = {
         let stack = UIStackView(arrangedSubviews: [nameField, emailField, passwordField])
         
-        stack.translatesAutoresizingMaskIntoConstraints = false
         stack.axis = .vertical
         stack.spacing = 20
         return stack
     }()
     
-    private lazy var signUpButton: PrimaryButton = {
-        let button = PrimaryButton(title: "SIGN UP")
+    private lazy var signUpButton: SMButton = {
+        let button = SMButton(title: "SIGN UP")
         
         return button
     }()
@@ -97,39 +93,39 @@ class SignUpView: UIView {
 
 extension SignUpView: ViewCode {
     func buildHierarchy() {
+        passwordField.addSubview(passwordVisibilityBtn, constraints: true)
         
-        self.addSubview(bgSignIn)
-        self.addSubview(titlelabel)
-        passwordField.addSubview(passwordVisibilityBtn)
-        self.addSubview(stackView)
-        self.addSubview(signUpButton)
+        addSubviews([bgSignUp,
+                    titlelabel,
+                    stackView,
+                    signUpButton], constraints: true)
     }
     
     func setupConstraints() {
+        bgSignUp.smc
+            .top()
+            .leading()
+            .trailing()
+            .bottom()
         
-        NSLayoutConstraint.activate([
-            
-            bgSignIn.topAnchor.constraint(equalTo: self.topAnchor),
-            bgSignIn.leadingAnchor.constraint(equalTo: self.leadingAnchor),
-            bgSignIn.trailingAnchor.constraint(equalTo: self.trailingAnchor),
-            bgSignIn.bottomAnchor.constraint(equalTo: self.bottomAnchor),
-            
-            titlelabel.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 32),
-            titlelabel.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 12),
-            titlelabel.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -12),
-            
-            passwordVisibilityBtn.centerYAnchor.constraint(equalTo: passwordField.centerYAnchor),
-            passwordVisibilityBtn.trailingAnchor.constraint(equalTo: passwordField.trailingAnchor, constant: -20),
-            
-            stackView.topAnchor.constraint(equalTo: titlelabel.bottomAnchor, constant: 50),
-            stackView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 12),
-            stackView.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -12),
-            
-            signUpButton.topAnchor.constraint(equalTo: stackView.bottomAnchor, constant: 50),
-            signUpButton.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 12),
-            signUpButton.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -12),
+        titlelabel.smc
+            .top(safeAreaLayoutGuide.topAnchor, 32)
+            .leading(24)
+            .trailing(24)
         
-        ])
+        passwordVisibilityBtn.smc
+            .trailing(20)
+            .centerY()
+        
+        stackView.smc
+            .top(titlelabel.bottomAnchor, 56)
+            .leading(24)
+            .trailing(24)
+        
+        signUpButton.smc
+            .leading(24)
+            .trailing(24)
+            .bottom(safeAreaLayoutGuide.bottomAnchor, 24)
     }
     
     func applyAdditionalChanges() {}

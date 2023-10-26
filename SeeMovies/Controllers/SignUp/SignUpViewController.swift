@@ -28,7 +28,7 @@ class SignUpViewController: UIViewController {
         
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(named: "icon-arowLeft"), style: .plain, target: self, action: #selector(dismissSelf))
         self.navigationItem.leftBarButtonItem?.tintColor = .white
-        self.navigationItem.titleView = PrimaryLogo(frame: .zero)
+        self.navigationItem.titleView = SMLogo()
     }
     
     private func setupDelegates() {

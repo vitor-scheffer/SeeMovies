@@ -9,7 +9,7 @@ import UIKit
 
 class SearchView: UIView {
     
-    override init(frame: CGRect) {
+    public init() {
         super.init(frame: .zero)
         
         setupView()
@@ -27,7 +27,7 @@ extension SearchView: ViewCode {
     func setupConstraints() {}
     
     func applyAdditionalChanges() {
-        self.backgroundColor = .gray700
+        backgroundColor = .gray700
     }
     
 }

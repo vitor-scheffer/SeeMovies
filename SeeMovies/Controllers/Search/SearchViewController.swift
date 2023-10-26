@@ -30,6 +30,6 @@ class SearchViewController: UIViewController {
     }
     
     private func setupNavigationBar() {
-        self.navigationItem.titleView = PrimaryLogo(frame: .zero)
+        self.navigationItem.titleView = SMLogo()
     }
 }
