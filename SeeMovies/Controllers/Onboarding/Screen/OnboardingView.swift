@@ -16,7 +16,7 @@ class OnboardingView: UIView {
     
     weak var delegate: OnboardingViewDelegate?
     
-    override init(frame: CGRect) {
+    public init() {
         super.init(frame: .zero)
         
         setupView()
@@ -29,14 +29,13 @@ class OnboardingView: UIView {
     private lazy var bgOnboardingView: UIImageView = {
         let view = UIImageView()
         
-        view.translatesAutoresizingMaskIntoConstraints = false
         view.image = UIImage(named: "bgLogin")
         view.contentMode = .scaleToFill
         return view
     }()
     
-    private lazy var logoView: PrimaryLogo = {
-        let view = PrimaryLogo(frame: frame)
+    private lazy var logoView: SMLogo = {
+        let view = SMLogo()
         
         return view
     }()
@@ -44,7 +43,6 @@ class OnboardingView: UIView {
     private lazy var titlelabel: UILabel = {
         let label = UILabel()
         
-        label.translatesAutoresizingMaskIntoConstraints = false
         label.font = UIFont.systemFont(ofSize: 32, weight: .light)
         label.text = I18n.Onboarding.title.text
         label.textColor = .white
@@ -56,7 +54,6 @@ class OnboardingView: UIView {
         let titleBtn = NSMutableAttributedString(string: "+",
                                                  attributes: [NSAttributedString.Key.foregroundColor : UIColor.white, NSAttributedString.Key.font : UIFont.systemFont(ofSize: 60, weight: .bold)])
         
-        button.translatesAutoresizingMaskIntoConstraints = false
         button.setAttributedTitle(titleBtn, for: .normal)
         button.borderWidth = 5
         button.cornerRadius = 80
@@ -70,7 +67,6 @@ class OnboardingView: UIView {
     private lazy var signUpButton: UIButton = {
         let button = UIButton()
         
-        button.translatesAutoresizingMaskIntoConstraints = false
         button.backgroundColor = .gray100.withAlphaComponent(0.2)
         button.setTitle("Sign Up", for: .normal)
         button.cornerRadius = 15
@@ -89,42 +85,42 @@ class OnboardingView: UIView {
 
 extension OnboardingView: ViewCode {
     func buildHierarchy() {
-        self.addSubview(bgOnboardingView)
-        self.addSubview(logoView)
-        self.addSubview(titlelabel)
-        self.addSubview(avatarView)
-        self.addSubview(signUpButton)
+        addSubviews([bgOnboardingView,
+                    logoView,
+                    titlelabel,
+                    avatarView,
+                    signUpButton], constraints: true)
     }
     
     func setupConstraints() {
-        NSLayoutConstraint.activate([
-            
-            bgOnboardingView.topAnchor.constraint(equalTo: self.topAnchor),
-            bgOnboardingView.leadingAnchor.constraint(equalTo: self.leadingAnchor),
-            bgOnboardingView.trailingAnchor.constraint(equalTo: self.trailingAnchor),
-            bgOnboardingView.bottomAnchor.constraint(equalTo: self.bottomAnchor),
-            
-            logoView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor),
-            logoView.centerXAnchor.constraint(equalTo: self.centerXAnchor),
-            
-            titlelabel.topAnchor.constraint(equalTo: logoView.bottomAnchor, constant: 32),
-            titlelabel.centerXAnchor.constraint(equalTo: centerXAnchor),
-            
-            avatarView.centerYAnchor.constraint(equalTo: centerYAnchor),
-            avatarView.centerXAnchor.constraint(equalTo: centerXAnchor),
-            avatarView.heightAnchor.constraint(equalToConstant: 160),
-            avatarView.widthAnchor.constraint(equalToConstant: 160),
-            
-            signUpButton.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: -32),
-            signUpButton.centerXAnchor.constraint(equalTo: self.centerXAnchor),
-            signUpButton.widthAnchor.constraint(equalToConstant: 100),
-            signUpButton.heightAnchor.constraint(equalToConstant: 30)
-        ])
+        bgOnboardingView.smc
+            .top()
+            .leading()
+            .trailing()
+            .bottom()
+        
+        logoView.smc
+            .top(safeAreaLayoutGuide.topAnchor)
+            .centerX()
+        
+        titlelabel.smc
+            .top(logoView.bottomAnchor, 32)
+            .centerX()
+        
+        avatarView.smc
+            .centerX()
+            .centerY()
+        
+        avatarView.setSize(width: 160, height: 160)
+        
+        signUpButton.smc
+            .bottom(safeAreaLayoutGuide.bottomAnchor, 24)
+            .centerX()
+        
+        signUpButton.setSize(width: 100, height: 30)
     }
     
-    func applyAdditionalChanges() {
-        self.backgroundColor = .white
-    }
+    func applyAdditionalChanges() {}
 }
 
 #if DEBUG

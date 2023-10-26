@@ -33,7 +33,7 @@ class HomeViewController: UIViewController {
     }
 
     private func setupNavigationBar() {
-        self.navigationItem.titleView = PrimaryLogo(frame: .zero)
+        self.navigationItem.titleView = SMLogo()
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "SIGN OUT", style: .plain, target: self, action: #selector(didPressSignOutBtn))
     }
     
@@ -48,36 +48,14 @@ class HomeViewController: UIViewController {
 extension HomeViewController: HomeViewModelDelegate {
     
     func setCollecttionViewDataSource() {
-        self.screen.movieCollectionView.delegate = self
-        self.screen.movieCollectionView.dataSource = self
         
-        self.screen.movieCollectionView.reloadData()
     }
     
     func setLoading() {
-        self.view.addLoading()
+        view.addLoading()
     }
     
     func removeLoading() {
-        self.view?.removeLoading()
-    }
-}
-
-
-
-extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelegate {
-    
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return viewModel.numberOfMovieRows
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = screen.movieCollectionView.dequeueReusableCell(withReuseIdentifier: MovieCollectionViewCell.identifier, for: indexPath) as? MovieCollectionViewCell else {return UICollectionViewCell()}
-        
-        let movie = viewModel.getCurrentMovie(index: indexPath)
-            
-        cell.setupCell(title: movie.title)
-        
-        return cell
+        view.removeLoading()
     }
 }

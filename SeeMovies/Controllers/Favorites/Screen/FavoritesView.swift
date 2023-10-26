@@ -9,7 +9,7 @@ import UIKit
 
 class FavoritesView: UIView {
     
-    override init(frame: CGRect) {
+    public init() {
         super.init(frame: .zero)
         
         setupView()
@@ -27,7 +27,7 @@ extension FavoritesView: ViewCode {
     func setupConstraints() {}
     
     func applyAdditionalChanges() {
-        self.backgroundColor = .gray700
+        backgroundColor = .gray700
     }
     
 }

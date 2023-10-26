@@ -29,7 +29,7 @@ class ServerContentManager {
     public func getMovies(completion: @escaping(TopRated?, Bool) -> Void) {
         guard let url = url(path: Endpoint.getMovies) else { return }
         
-        AF.request(url, method: .get, encoding: URLEncoding.default).responseJSON { (response) in
+        AF.request(url, method: .get, encoding: URLEncoding.default).responseData(completionHandler: { (response) in
             guard let data = response.data else { return }
             
             do {
@@ -38,8 +38,7 @@ class ServerContentManager {
             } catch {
                 completion(nil, false)
             }
-            
-        }
+        })
     }
 }
 
