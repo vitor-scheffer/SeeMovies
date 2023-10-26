@@ -45,19 +45,19 @@ class SignUpView: UIView {
     }()
     
     lazy var nameField: SMTextField = {
-        let field = SMTextField(placeholder: "Name")
+        let field = SMTextField(placeholder: I18n.General.name.text)
         
         return field
     }()
     
     lazy var emailField: SMTextField = {
-        let field = SMTextField(placeholder: "Email")
+        let field = SMTextField(placeholder: I18n.General.email.text)
         
         return field
     }()
     
     lazy var passwordField: SMTextField = {
-        let field = SMTextField(placeholder: "Password")
+        let field = SMTextField(placeholder: I18n.General.password.text)
         
         field.isSecureTextEntry = true
         return field
@@ -81,7 +81,7 @@ class SignUpView: UIView {
     }()
     
     private lazy var signUpButton: SMButton = {
-        let button = SMButton(title: "SIGN UP")
+        let button = SMButton(title: I18n.General.signUp.text)
         
         return button
     }()

@@ -46,13 +46,13 @@ class SignInView: UIView {
     }()
     
     lazy var emailField: SMTextField = {
-        let field = SMTextField(placeholder: "Email")
+        let field = SMTextField(placeholder: I18n.General.email.text)
         
         return field
     }()
     
     lazy var passwordField: SMTextField = {
-        let field = SMTextField(placeholder: "Password")
+        let field = SMTextField(placeholder: I18n.General.password.text)
         
         field.isSecureTextEntry = true
         return field
@@ -76,7 +76,7 @@ class SignInView: UIView {
     }()
     
     private lazy var signInButton: SMButton = {
-        let button = SMButton(title: "SIGN IN")
+        let button = SMButton(title: I18n.General.signIn.text)
         
         button.addTarget(self, action: #selector(didPressSignInBtn), for: .touchUpInside)
         return button

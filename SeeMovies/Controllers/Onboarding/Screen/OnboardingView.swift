@@ -68,7 +68,7 @@ class OnboardingView: UIView {
         let button = UIButton()
         
         button.backgroundColor = .gray100.withAlphaComponent(0.2)
-        button.setTitle("Sign Up", for: .normal)
+        button.setTitle(I18n.General.signUp.text, for: .normal)
         button.cornerRadius = 15
         button.addTarget(self, action: #selector(didPressSignUpBtn), for: .touchUpInside)
         return button
