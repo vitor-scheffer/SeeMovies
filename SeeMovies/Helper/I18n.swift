@@ -7,6 +7,23 @@ public protocol I18nProtocol {
 }
 
 public final class I18n {
+    public enum General: String, I18nProtocol {
+        case name = "SMname"
+        case email = "SMemail"
+        case signIn = "SMsign.in"
+        case signUp = "SMsign.up"
+        case signOut = "SMsign.out"
+        case password = "SMpassword"
+
+        public var text: String {
+            return NSLocalizedString(self.rawValue.localized, comment: "")
+        }
+
+        public func text(with complement: String...) -> String {
+            String(format: NSLocalizedString(self.text, comment: "%@"), arguments: complement)
+        }
+    }
+    
     public enum Onboarding: String, I18nProtocol {
         case title = "SMonboarding.title"
         

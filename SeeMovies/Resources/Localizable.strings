@@ -1,3 +1,10 @@
+"SMname" = "Name";
+"SMemail" = "Email";
+"SMsign.in" = "Sign In";
+"SMsign.up" = "Sign Up";
+"SMsign.out" = "Sign Out";
+"SMpassword" = "Password";
+
 "SMonboarding.title" = "Who Is Watching?";
 
 "SMsign.in.title" = "Access your HBO Max account";

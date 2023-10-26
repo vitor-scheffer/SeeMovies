@@ -34,7 +34,7 @@ class HomeViewController: UIViewController {
 
     private func setupNavigationBar() {
         self.navigationItem.titleView = SMLogo()
-        self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "SIGN OUT", style: .plain, target: self, action: #selector(didPressSignOutBtn))
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: I18n.General.signOut.text, style: .plain, target: self, action: #selector(didPressSignOutBtn))
     }
     
     @objc private func didPressSignOutBtn() {
