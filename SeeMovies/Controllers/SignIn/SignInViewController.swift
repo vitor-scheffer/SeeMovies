@@ -84,16 +84,39 @@ extension SignInViewController: UITextFieldDelegate {
             }
         }
     }
+    
+    private func formValidate(formData: SignInInput) -> String? {
+        if formData.email.isEmpty {
+            return "email"
+        }
+        if formData.password.isEmpty {
+            return "password"
+        }
+        
+        return nil
+    }
 }
 
 extension SignInViewController: SignInViewDelegate {
-    func didPressSignInBtn() {
-        let controller = MainTabBarViewController()
+    func didPressSignInBtn(input: SignInInput) {
+        let formErrors = formValidate(formData: input)
         
-        controller.modalPresentationStyle = .fullScreen
-        self.present(controller, animated: true)
+        if formErrors == nil {
+            // realizar requisição
+            
+            view.addLoading()
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {self.view.removeLoading()})
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1.1, execute: {
+                let controller = MainTabBarViewController()
+                controller.modalPresentationStyle = .fullScreen
+                self.present(controller, animated: true)
+            })
+        } else {
+            addAlert(title: "Ocorreu um erro",
+                     message: "O campo \(formErrors!) não foi preenchido.",
+                     cancelAction: "Ok")
+        }
     }
-    
     
     func didPressPasswordVisibilityBtn() {
         if screen.passwordField.isSecureTextEntry {

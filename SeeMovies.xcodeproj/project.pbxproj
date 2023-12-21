@@ -54,6 +54,8 @@
 		E55E62F92AE8C6ED00A23EB2 /* SMFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = E55E62F82AE8C6ED00A23EB2 /* SMFont.swift */; };
 		E55E62FB2AE8CD5400A23EB2 /* UIColors+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E55E62FA2AE8CD5400A23EB2 /* UIColors+Extensions.swift */; };
 		E55E62FE2AE8CE5100A23EB2 /* SMConstraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = E55E62FD2AE8CE5100A23EB2 /* SMConstraints.swift */; };
+		E5CC34A12B34C5710031CF2C /* SIgnUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5CC34A02B34C5710031CF2C /* SIgnUp.swift */; };
+		E5CC34A42B34D5830031CF2C /* SignIn.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5CC34A32B34D5830031CF2C /* SignIn.swift */; };
 		E5E530872ACA380800051336 /* I18n.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5E530862ACA380800051336 /* I18n.swift */; };
 		E5E530892ACA61BD00051336 /* CHANGELOG.md in Sources */ = {isa = PBXBuildFile; fileRef = E5E530882ACA61BD00051336 /* CHANGELOG.md */; };
 /* End PBXBuildFile section */
@@ -103,6 +105,8 @@
 		E55E62F82AE8C6ED00A23EB2 /* SMFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SMFont.swift; sourceTree = "<group>"; };
 		E55E62FA2AE8CD5400A23EB2 /* UIColors+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColors+Extensions.swift"; sourceTree = "<group>"; };
 		E55E62FD2AE8CE5100A23EB2 /* SMConstraints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SMConstraints.swift; sourceTree = "<group>"; };
+		E5CC34A02B34C5710031CF2C /* SIgnUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SIgnUp.swift; sourceTree = "<group>"; };
+		E5CC34A32B34D5830031CF2C /* SignIn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignIn.swift; sourceTree = "<group>"; };
 		E5E530862ACA380800051336 /* I18n.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = I18n.swift; sourceTree = "<group>"; };
 		E5E530882ACA61BD00051336 /* CHANGELOG.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = CHANGELOG.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -280,6 +284,7 @@
 		97C8A46C29953F3300C6DE96 /* SignIn */ = {
 			isa = PBXGroup;
 			children = (
+				E5CC34A22B34D5720031CF2C /* Model */,
 				97C8A46E29953F7400C6DE96 /* Screen */,
 				97C8A47029953F9200C6DE96 /* SignInViewController.swift */,
 			);
@@ -289,6 +294,7 @@
 		97C8A46D29953F3B00C6DE96 /* SignUp */ = {
 			isa = PBXGroup;
 			children = (
+				E5CC349F2B34C5540031CF2C /* Model */,
 				97C8A46F29953F7B00C6DE96 /* Screen */,
 				97C8A47229953FA100C6DE96 /* SignUpViewController.swift */,
 			);
@@ -407,6 +413,22 @@
 			path = Constraints;
 			sourceTree = "<group>";
 		};
+		E5CC349F2B34C5540031CF2C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				E5CC34A02B34C5710031CF2C /* SIgnUp.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		E5CC34A22B34D5720031CF2C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				E5CC34A32B34D5830031CF2C /* SignIn.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -516,9 +538,11 @@
 				97C8A45629944A5600C6DE96 /* UIView+Preview.swift in Sources */,
 				97A4E21329919D35002CA237 /* SceneDelegate.swift in Sources */,
 				97C8A4502994489D00C6DE96 /* HomeViewModel.swift in Sources */,
+				E5CC34A42B34D5830031CF2C /* SignIn.swift in Sources */,
 				97C8A47B2995B68E00C6DE96 /* SMButton.swift in Sources */,
 				97C8A47529953FC200C6DE96 /* SignInView.swift in Sources */,
 				9772DBB22998536F00748967 /* FavoritesView.swift in Sources */,
+				E5CC34A12B34C5710031CF2C /* SIgnUp.swift in Sources */,
 				97C8A47129953F9200C6DE96 /* SignInViewController.swift in Sources */,
 				97C8A4652994AC1C00C6DE96 /* User+CoreDataClass.swift in Sources */,
 				E55E62FE2AE8CE5100A23EB2 /* SMConstraints.swift in Sources */,

@@ -8,8 +8,8 @@
 import UIKit
 
 protocol SignUpViewDelegate: AnyObject {
-    
     func didPressPasswordVisibilityBtn()
+    func didPressSignUpBtn(input: SignUpInput)
 }
 
 class SignUpView: UIView {
@@ -68,7 +68,6 @@ class SignUpView: UIView {
         
         btn.setImage(UIImage(named: "icon-hidden"), for: .normal)
         btn.tintColor = .white
-        btn.addTarget(self, action: #selector(didPressPasswordVisibilityBtn), for: .touchUpInside)
         return btn
     }()
     
@@ -88,6 +87,16 @@ class SignUpView: UIView {
     
     @objc private func didPressPasswordVisibilityBtn() {
         self.delegate?.didPressPasswordVisibilityBtn()
+    }
+    
+    @objc private func didPressSignUpBtn() {
+        guard let name = self.nameField.text,
+              let email = self.emailField.text,
+              let password = self.passwordField.text
+        else { return }
+        
+        let input = SignUpInput(name: name, email: email, password: password)
+        self.delegate?.didPressSignUpBtn(input: input)
     }
 }
 
@@ -128,7 +137,10 @@ extension SignUpView: ViewCode {
             .bottom(safeAreaLayoutGuide.bottomAnchor, 24)
     }
     
-    func applyAdditionalChanges() {}
+    func applyAdditionalChanges() {
+        passwordVisibilityBtn.addTarget(self, action: #selector(didPressPasswordVisibilityBtn), for: .touchUpInside)
+        signUpButton.addTarget(self, action: #selector(didPressSignUpBtn), for: .touchUpInside)
+    }
 }
 
 #if DEBUG

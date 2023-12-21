@@ -9,7 +9,7 @@ import UIKit
 
 protocol SignInViewDelegate: AnyObject {
     
-    func didPressSignInBtn()
+    func didPressSignInBtn(input: SignInInput)
     func didPressPasswordVisibilityBtn()
 }
 
@@ -83,7 +83,12 @@ class SignInView: UIView {
     }()
     
     @objc private func didPressSignInBtn() {
-        self.delegate?.didPressSignInBtn()
+        guard let email = emailField.text,
+              let password = passwordField.text
+        else { return }
+        
+        let input = SignInInput(email: email, password: password)
+        self.delegate?.didPressSignInBtn(input: input)
     }
     
     @objc private func didPressPasswordVisibilityBtn() {
