@@ -99,9 +99,41 @@ extension SignUpViewController: UITextFieldDelegate {
             }
         }
     }
+    
+    private func formValidate(formData: SignUpInput) -> String? {
+        if formData.name.isEmpty {
+            return "name"
+        }
+        if formData.email.isEmpty {
+            return "email"
+        }
+        if formData.password.isEmpty {
+            return "password"
+        }
+        
+        return nil
+    }
 }
 
 extension SignUpViewController: SignUpViewDelegate {
+    func didPressSignUpBtn(input: SignUpInput) {
+        let formErrors = formValidate(formData: input)
+        
+        if formErrors == nil {
+            // realizar requisição
+            
+            view.addLoading()
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {self.view.removeLoading()})
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1.1, execute: {self.addAlert(title: "Sucesso",
+                                                                                     message: "Sua conta foi criada com sucesso.",
+                                                                                     cancelAction: "Entendi")})
+        } else {
+            addAlert(title: "Ocorreu um erro",
+                     message: "O campo \(formErrors!) não foi preenchido",
+                     cancelAction: "Ok")
+        }
+    }
+    
     
     func didPressPasswordVisibilityBtn() {
         if screen.passwordField.isSecureTextEntry {

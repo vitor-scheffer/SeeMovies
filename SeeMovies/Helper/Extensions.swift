@@ -43,7 +43,7 @@ extension UIView {
 
 public extension UIView {
     func addLoading() {
-        let blurEffect = UIBlurEffect(style: .prominent)
+        let blurEffect = UIBlurEffect(style: .dark)
         let blurEffectView = UIVisualEffectView(effect: blurEffect)
         blurEffectView.frame = self.bounds
         blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
@@ -71,6 +71,17 @@ public extension UIView {
                 view.removeFromSuperview()
             }
         }
+    }
+}
+
+public extension UIViewController {
+    func addAlert(title: String, message: String, cancelAction: String) {
+        let controller = UIAlertController(title: title,
+                                           message: message,
+                                           preferredStyle: .alert)
+        controller.addAction(UIAlertAction(title: cancelAction, style: .cancel))
+        
+        self.present(controller, animated: true)
     }
 }
 
